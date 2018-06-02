@@ -13,3 +13,11 @@ body {
   height:200px;
   background-color: #2f35ed;
 }
+img {
+  width:80%;
+  height:80%;
+  margin:auto;
+  margin-top:20px;
+  margin-left:20px;
+  display:none;
+}
