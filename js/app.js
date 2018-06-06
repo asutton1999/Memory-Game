@@ -1,48 +1,31 @@
+ let open = [];
+ let matched = [];
+ function compareCards () {
+   if (open[0].attr('src')=== open[1].attr('src')) {
+     open[0].removeClass('open');
+     open[1].removeClass('open');
+     open[0].addClass('matched');
+     open[1].addClass('matched');
+     open.pop();
+     open.pop();
+     console.log('match!');
+   } else {
+ setTimeout( function noMatch (){
+ open[0].removeClass('open');
+ open[1].removeClass('open');
+ open[0].addClass('closed');
+ open[1].addClass('closed');
+ open.pop();
+ open.pop();
+console.log('Not a match!')}, 500)
+ }
+}
 
-const heart = $('#heart').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
-const smile = $('#smile').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
- const balloon= $('#balloon').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
- const boardGame= $('#board-game').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
- const rocketShip = $('#rocket-ship').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
-const boat = $('#boat').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
- const car = $('#car').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
-const plane= $('#plane').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
-const heart2 = $('#heart2').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
-const smile2 = $('#smile2').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
-const balloon2 = $('#balloon2').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
-const boardGame2 = $('#board-game2').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
-const rocketShip2 = ('#rocket-ship2').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
- const boat2 = $('#boat2').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
- const car2 = $('#car2').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
-
-const plane2 = $('#plane2').on('click', function showImage (event){
-$(event.target).children().css("display","block"); } )
+$('.card').on('click', function showImage () {
+  $(event.target).children().removeClass('closed');
+  $(event.target).children().addClass('open');
+  open.push ($(event.target).children());
+  if (open.length > 1) {
+  compareCards();
+  };
+  console.log (clicks); })
