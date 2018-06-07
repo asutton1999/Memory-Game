@@ -1,6 +1,7 @@
  let open = [];
  let matched = [];
- // Compares the two clicked cards and responds by assigning them the appropriate class. 
+ let count=[];
+ // Compares the two clicked cards and responds by assigning them the appropriate class.
  function compareCards () {
    if (open[0].attr('src')=== open[1].attr('src')) {
      open[0].removeClass('open');
@@ -23,10 +24,12 @@
 console.log('Not a match!')}, 500)
  }
 }
+// Determines all matches have been made
 function endGame (){
   $('#full-deck').css('display','none');
   $('body'). append('<h1> You beat the game! </h1>')
 }
+//event listener
 $('.card').on('click', function showImage () {
   $(event.target).children().removeClass('closed');
   $(event.target).children().addClass('open');
@@ -36,4 +39,14 @@ $('.card').on('click', function showImage () {
   if (matched.length > 15){
     endGame();
   }
-  console.log (clicks); })
+// counter
+  console.log (clicks); 
+
+  //Star Rating
+  if (clicks > 25){
+    $('#star3').addClass('lowScore');
+  }
+  if (clicks > 30) {
+    $('#star2').addClass('lowScore');
+  }
+});

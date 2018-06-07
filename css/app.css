@@ -1,6 +1,11 @@
 body {
   background-color: #2fedd3;
 }
+h1{
+  font: 2.5em Jua;
+  text-align: center;
+  margin-bottom: 5px;
+}
 #full-deck {
   display:flex;
   flex-wrap:wrap;
@@ -32,3 +37,21 @@ body {
   margin-top:10px;
   margin-left:20px;
   display:inline;
+}
+.rating{
+  width:30px;
+  height:30px;
+  padding-right:20px;
+  padding-left: 20px;
+
+}
+#star1{
+  margin-left: 520px;
+}
+figcaption{
+  margin-left: 590px;
+  font:1em Cabin Sketch;
+}
+.lowScore{
+  display:none;
+}
