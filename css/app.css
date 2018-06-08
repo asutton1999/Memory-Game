@@ -1,6 +1,7 @@
 body {
   background-color: #2fedd3;
 }
+
 h1{
   font: 2.5em Jua;
   text-align: center;
@@ -54,4 +55,11 @@ figcaption{
 }
 .lowScore{
   display:none;
+}
+#counter {
+  font: 1em Cabin Sketch;
+  text-align: left;
+  margin-left: 1000px;
+  margin-top:0px;
+
 }

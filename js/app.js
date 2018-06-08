@@ -1,6 +1,34 @@
  let open = [];
  let matched = [];
- let count=[];
+ let cards=[];
+ let shuffled=[];
+ //randomizes card order and adds it to DOM
+ function shuffle () {
+   cards.push($('#heart'));
+   cards.push($('#smile'));
+   cards.push($('#balloon'));
+   cards.push($('#board-game'));
+   cards.push($('#rocket-ship'));
+   cards.push($('#boat'));
+   cards.push($('#car'));
+   cards.push($('#plane'));
+   cards.push($('#heart2'));
+   cards.push($('#smile2'));
+   cards.push($('#balloon2'));
+   cards.push($('#board-game2'));
+   cards.push($('#rocket-ship2'));
+   cards.push($('#boat2'));
+   cards.push($('#car2'));
+   cards.push($('#plane2'));
+while (shuffled.length < 16){
+  let number = Math.floor(Math.random()*(cards.length))
+  shuffled.push(cards[number]);
+  cards.splice(number,1);
+}
+$('#full-deck').children().remove();
+$('#full-deck').append(shuffled);
+}
+document.addEventListener("DOMContentLoaded", shuffle());
  // Compares the two clicked cards and responds by assigning them the appropriate class.
  function compareCards () {
    if (open[0].attr('src')=== open[1].attr('src')) {
@@ -40,7 +68,15 @@ $('.card').on('click', function showImage () {
     endGame();
   }
 // counter
-  console.log (clicks); 
+  console.log (clicks);
+  if (clicks < 2) {
+  document.getElementById("counter").textContent = clicks + " clicks";
+  console.log ('first click');
+} else {
+  document.getElementById("counter").textContent = '';
+  document.getElementById("counter").textContent = clicks + " clicks";
+  console.log( 'other clicks');
+}
 
   //Star Rating
   if (clicks > 25){
