@@ -55,17 +55,46 @@ console.log('Not a match!')}, 500)
 // Determines all matches have been made
 function endGame (){
   $('#full-deck').css('display','none');
-  $('body'). append('<h1> You beat the game! </h1>')
+//modal popup content
+  $('#modalCongrats').css('display','block');
+  $('#modalCongrats').prepend($('.rating'));
+  $('#modalCongrats').prepend($('#counter'));
+//modal layout design
+  $('#counter').css('margin-left','40px');
+  $('#counter').css('margin-top','20px');
+  $('#counter').css('padding-top','20px');
+  $('#star1').css('margin-left','0px');
+  $('#star2').css('margin-left','0px');
+  $('#star3').css('margin-left','0px');
+  $('figcaption').css('margin-left','473px');
+}
+//Timer
+let s=0;
+let t;
+function Timer () {
+let timer = $('#timer');
+timer.html(s +" seconds");
+s++;
+t = setTimeout(Timer,1000);
+}
+
+function stopTimer(){
+  console.log(t);
+  clearTimeout(t);
 }
 //event listener
 $('.card').on('click', function showImage () {
   $(event.target).children().removeClass('closed');
   $(event.target).children().addClass('open');
   open.push ($(event.target).children());
+  if(clicks < 2){
+    Timer();
+  }
   if (open.length > 1 && matched.length < 16 ) {
-  compareCards(); }
+   compareCards();}
   if (matched.length > 15){
     endGame();
+    stopTimer();
   }
 // counter
   console.log (clicks);
@@ -85,4 +114,5 @@ $('.card').on('click', function showImage () {
   if (clicks > 30) {
     $('#star2').addClass('lowScore');
   }
+
 });
