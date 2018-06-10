@@ -57,8 +57,10 @@ function endGame (){
   $('#full-deck').css('display','none');
 //modal popup content
   $('#modalCongrats').css('display','block');
+  $('#modalCongrats').prepend($('#timer'));
   $('#modalCongrats').prepend($('.rating'));
   $('#modalCongrats').prepend($('#counter'));
+  
 //modal layout design
   $('#counter').css('margin-left','40px');
   $('#counter').css('margin-top','20px');
