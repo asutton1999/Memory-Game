@@ -60,7 +60,7 @@ function endGame (){
   $('#modalCongrats').prepend($('#timer'));
   $('#modalCongrats').prepend($('.rating'));
   $('#modalCongrats').prepend($('#counter'));
-  
+
 //modal layout design
   $('#counter').css('margin-left','40px');
   $('#counter').css('margin-top','20px');
@@ -101,19 +101,17 @@ $('.card').on('click', function showImage () {
 // counter
   console.log (clicks);
   if (clicks < 2) {
-  document.getElementById("counter").textContent = clicks + " clicks";
   console.log ('first click');
-} else {
+} else if(clicks % 2 === 0) {
   document.getElementById("counter").textContent = '';
-  document.getElementById("counter").textContent = clicks + " clicks";
-  console.log( 'other clicks');
+  document.getElementById("counter").textContent = clicks/2 + " move(s)";
 }
 
   //Star Rating
   if (clicks > 25){
     $('#star3').addClass('lowScore');
   }
-  if (clicks > 30) {
+  if (clicks > 31) {
     $('#star2').addClass('lowScore');
   }
 
