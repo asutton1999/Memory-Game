@@ -2,7 +2,7 @@ body {
   background-color: #2fedd3;
 }
 
-h1{
+h1 {
   font: 2.5em Jua;
   text-align: center;
   margin-bottom: 5px;
@@ -42,15 +42,15 @@ h1{
 .rating{
   width:30px;
   height:30px;
-  padding-right:20px;
-  padding-left: 20px;
+  padding-right:10px;
+  padding-left: 10px;
 
 }
 #star1{
-  margin-left: 520px;
+  margin-left: 90px;
 }
 figcaption{
-  margin-left: 590px;
+  margin-left: 390px;
   font:1em Cabin Sketch;
 }
 .lowScore{
@@ -71,7 +71,7 @@ figcaption{
   text-align: center;
   padding-bottom: 20px;
 }
-button{
+#replay{
   background-color: red;
   text-align: center;
   border-radius: 50%;
@@ -80,4 +80,52 @@ button{
 #timer{
   display:block;
   text-align:center;
+}
+#reset {
+  background-color: orange;
+  text-align: center;
+  border-radius: 30%;
+}
+
+@media screen and (max-width:817px) {
+
+#full-deck {
+  margin-left:0px;
+}
+.card{
+  margin-right:10px;
+  margin-bottom:10px;
+  height:45px;
+}
+.open{
+  margin-top:5px;
+  margin-left:5px;
+}
+.matched{
+  margin-top:5px;
+  margin-left:5px;
+}
+.rating{
+  width:30px;
+  height:30px;
+  padding-right:0px;
+  padding-left: 0px;
+
+}
+#star1{
+  margin-left: 0px;
+}
+figcaption{
+  margin-left: 0px;
+}
+
+#counter {
+  margin-left: 250px;
+}
+.container{
+  padding-bottom: 10px;
+}
+#replay{
+  padding-top: 10px;
+}
 }
