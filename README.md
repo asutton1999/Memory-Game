@@ -15,5 +15,5 @@ When all 8 pairs have been matched the game will display a modal showing the sta
 
 Development/Game Dependencies
 
-This program is written in html%, CSS, and JavaScript ES6.
+This program is written in html5, CSS, and JavaScript ES6.
 The game is dependent on jQuery specifically the 3.3.1 version. The dependency is linked to the following source location for retrieval "https://code.jquery.com/jquery-3.3.1.min.js".
